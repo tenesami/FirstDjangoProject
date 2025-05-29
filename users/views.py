@@ -2,8 +2,8 @@
 from django.shortcuts import render, redirect
 from django.contrib import  messages
 from .forms import UserRegistrationForm
-from django.contrib.auth import login, logout
-
+from django.contrib.auth.decorators import login_required 
+from django.contrib.auth import logout
 
 # Create your views here.
 def register(request):
@@ -19,10 +19,16 @@ def register(request):
         form = UserRegistrationForm()
     return render(request, 'users/register.html', {'form': form})
 
+
 def logout_view(request):
     logout(request)
     messages.success(request, f'You have been logged out')
     return redirect('login')
+
+@login_required
+def profile(request):
+    return render(request, 'users/profile.html')
+
 # def register(request):
     # if request.method == 'POST':
     #     # Handle the registration logic here

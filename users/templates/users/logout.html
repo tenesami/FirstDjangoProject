@@ -6,3 +6,27 @@
     </small>
 </div>
 {% endblock content %}
+<!-- <form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Logout</button>
+</form> -->
+<!-- {% extends "blog/base.html" %} {% block title %}Logged Out{% endblock title %} {% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <h1 class="display-4 mb-3">You’ve been logged out</h1>
+            <p class="lead mb-4">
+                Thank you for visiting. You have successfully ended your session.
+            </p>
+            <div class="d-flex justify-content-center">
+                <a href="{% url 'login' %}" class="btn btn-primary mr-2">
+          Log in again
+        </a>
+                <a href="{% url 'blog-home' %}" class="btn btn-secondary">
+          Back to Home
+        </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %} -->
