@@ -143,4 +143,14 @@ LOGIN_REDIRECT_URL = 'blog-home'
 
 LOGIN_URL = 'login'
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ.get('DB_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('DB_PASS')
+# EMAIL_HOST_USER and EMAIL_HOST_PASSWORD are environment variables that should be set in your system.
+# This is a security measure to avoid hardcoding sensitive information in your code.    
 
+# db_user = os.environ.get('DB_USER', 'default_user')
+# db_password = os.environ.get('DB_PASS')
